@@ -70,6 +70,18 @@ int main() {
     cout << "Longest Common Substring: " << lcs << endl;
     cout << "\nEnhanced Lookup Table:\n";
     print_table(dp, str1, str2);
+    Output:
+    /tmp/v7WHxM8Dsk.o
+Longest Common Substring: ABA
+
+Enhanced Lookup Table:
+     B   A   B   A   
+  0   0   0   0   0   
+A 0   0(A,B) 1(A,BA) 0(A,BAB) 1(A,BABA) 
+B 0   1(AB,B) 0(AB,BA) 2(AB,BAB) 0(AB,BABA) 
+A 0   0(ABA,B) 2(ABA,BA) 0(ABA,BAB) 3(ABA,BABA) 
+B 0   1(ABAB,B) 0(ABAB,BA) 3(ABAB,BAB) 0(ABAB,BABA) 
+
 
     return 0;
 }
